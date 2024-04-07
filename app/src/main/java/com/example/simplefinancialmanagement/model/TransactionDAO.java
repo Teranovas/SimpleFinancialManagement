@@ -16,7 +16,7 @@ public interface TransactionDAO {
     void insert(Transaction transaction);
 
     // LiveData를 사용하여 데이터 변경 시 UI가 자동으로 업데이트되도록 한다.
-    @Query("SELECT * FROM userTransaction")
+    @Query("SELECT * FROM userTransaction ORDER BY date DESC")
     // 모든 Transaction 객체를 조회
     LiveData<List<Transaction>> getAllTransactions();
 
